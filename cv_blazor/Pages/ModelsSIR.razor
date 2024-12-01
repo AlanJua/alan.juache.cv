@@ -1,0 +1,30 @@
+@page "/modelSIR"
+@using cv.Services
+
+
+<PageTitle>SIR models made simple</PageTitle>
+
+<h1 id="Name">SIR models made simple</h1>
+
+@if (PlotContentDivString == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div id="sir-plot">@((MarkupString)PlotContentDivString)</div>
+}
+
+@code {
+    public string? PlotContentDivString { get; set; }
+    private ModelsSIRPlot.ModelSIR? PlotContentDiv;
+
+    [Inject]
+    ModelsSIRPlot ModelsSIRPlot { get; set; } = default!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        PlotContentDiv = await ModelsSIRPlot.GetPlotContentDiv();
+        PlotContentDivString = PlotContentDiv?.div;
+    }
+}

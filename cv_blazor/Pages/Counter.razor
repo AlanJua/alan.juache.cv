@@ -1,0 +1,56 @@
+﻿@page "/publications"
+@using cv.Services
+
+<PageTitle>Publications</PageTitle>
+
+<h1 id="Name">Publications</h1>
+
+<div class="project">
+    <ul>
+        @foreach (var publication in publicationList)
+        {                    
+            <li id="presentation">
+                @publication.Title
+                <button @onclick="() => OnButtonClick(publication.Title)">
+                    @(activeAbstract == publication.Title ? "Hide Abstract" : "Show Abstract")
+                </button>
+                @if (activeAbstract == publication.Title)
+                {
+                    <div id="abstract-box">
+                    @publication.Abstract
+                    </div>
+                }
+            </li>
+        }
+    </ul>
+</div>
+
+@code {
+    private List<Publication> publicationList = new();
+    private string? activeAbstract;
+    
+    // Inject the PublicationService via DI
+    [Inject]
+    public PublicationService PublicationService { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Fetch publications asynchronously using the injected service
+        publicationList = await PublicationService.GetPublicationsAsync();
+    }    
+
+    private void OnButtonClick(string publicationTitle)
+    {
+        // Toggle visibility of the abstract for the clicked publication
+        if (activeAbstract == publicationTitle)
+        {
+            // If the clicked publication is already showing, hide it
+            activeAbstract = null;
+        }
+        else
+        {
+            // Otherwise, show the abstract for the clicked publication
+            activeAbstract = publicationTitle;
+        }
+    }
+}

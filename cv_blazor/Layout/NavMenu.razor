@@ -1,0 +1,54 @@
+﻿<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">Home</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+    <nav class="nav flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                @* <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> About me *@
+                <img src="icons/home.png" alt="About Me Icon" class="custom-icon" /> About me
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="research">
+                @* <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Research interest *@
+                <img src="icons/research.png" alt="About Me Icon" class="custom-icon" /> Research interests
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="publications">
+                @* <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Publications *@
+                <img src="icons/publications.png" alt="About Me Icon" class="custom-icon" /> Publications
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="modelSIR">
+                @* <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Some examples *@
+                <img src="icons/examples.png" alt="About Me Icon" class="custom-icon" /> Models
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="contact">
+                @* <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Contact me *@
+                <img src="icons/contact.png" alt="About Me Icon" class="custom-icon" /> Contact me!
+            </NavLink>
+        </div>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
