@@ -36,7 +36,6 @@ Models/obj/Debug/net9.0/Models.xml
 Models/obj/Debug/net9.0/ref/Models.dll
 Models/obj/Debug/net9.0/refint/Models.dll
 .DS_Store
-cv_blazor.sln
 # Comprehensive .gitignore for .NET and Blazor Projects
 
 # Visual Studio files
@@ -125,3 +124,5 @@ ehthumbs_vista.db
 wwwroot/service-worker.js
 wwwroot/service-worker.published.js
 cv_blazor/.gitignore
+
+.fake
