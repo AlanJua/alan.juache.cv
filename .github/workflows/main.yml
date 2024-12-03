@@ -2,9 +2,9 @@ name: Deploy Blazor WASM
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -16,30 +16,30 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '9.0'
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '9.0'
 
-    - name: Restore Dependencies
-      run: dotnet restore
+      - name: Restore Dependencies
+        run: dotnet restore cv_blazor.sln
 
-    - name: Build Project
-      run: dotnet build --configuration Release
+      - name: Build Project
+        run: dotnet build cv_blazor.sln --configuration Release
 
-    - name: Publish Project
-      run: dotnet publish -c Release -o release
+      - name: Publish Project
+        run: dotnet publish cv_blazor.sln -c Release -o release
 
-    # Important: Modify base href for GitHub Pages
-    - name: Modify base href
-      run: |
-        sed -i 's/<base href="\/" \/>/<base href="\/alan.juache.cv\/" \/>/g' release/wwwroot/index.html
+      # Important: Modify base href for GitHub Pages
+      - name: Modify base href
+        run: |
+          sed -i 's/<base href="\/" \/>/<base href="\/alan.juache.cv\/" \/>/g' release/wwwroot/index.html
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./release/wwwroot
-        publish_branch: gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./release/wwwroot
+          publish_branch: gh-pages
