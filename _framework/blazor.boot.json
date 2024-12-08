@@ -1,11 +1,11 @@
 {
   "mainAssemblyName": "cv_blazor",
   "resources": {
-    "hash": "sha256-puNdlwCAH8TIfLVrk9cVzMgq5CDCawJfYRieZJG+e/U=",
+    "hash": "sha256-f2y3FdzYOIcMUMA4eqktcxCRrsv7kNKHXVEup2D5AWg=",
     "fingerprinting": {
-      "cv_blazor.9mwcs55cj7.wasm": "cv_blazor.wasm",
+      "cv_blazor.8xh7xeaj6h.wasm": "cv_blazor.wasm",
       "DynamicObj.yrdgvvkjdc.wasm": "DynamicObj.wasm",
-      "epimodels.7ed711otaj.wasm": "epimodels.wasm",
+      "epimodels.h4y2umeiqe.wasm": "epimodels.wasm",
       "FSharp.Core.46bwnx2oyi.wasm": "FSharp.Core.wasm",
       "Giraffe.ViewEngine.StrongName.xkzefg12bq.wasm": "Giraffe.ViewEngine.StrongName.wasm",
       "Microsoft.AspNetCore.Components.11gpzidey1.wasm": "Microsoft.AspNetCore.Components.wasm",
@@ -109,9 +109,9 @@
       "System.Runtime.InteropServices.JavaScript.3uvku0ibnu.wasm": "sha256-K5wa4QwWB8A0OrHM4yWK86Nl6ItEv9c3ctAASLMYLKo="
     },
     "assembly": {
-      "cv_blazor.9mwcs55cj7.wasm": "sha256-IVBBGOcsD5EdOuvLqif44AKlk5Lz6u39naUwqfE+uJ0=",
+      "cv_blazor.8xh7xeaj6h.wasm": "sha256-hJAom5LMj4jkssjCraQIiVnmprgikLwZaUS6tzuefZA=",
       "DynamicObj.yrdgvvkjdc.wasm": "sha256-QvvWROODrYXA6Wu6a6UVnClW6ei36+37TaMzKSSrBwk=",
-      "epimodels.7ed711otaj.wasm": "sha256-j0Tm3PV2QskATsFg5oWJsT7995HFPrLmYQGJwTgmlbA=",
+      "epimodels.h4y2umeiqe.wasm": "sha256-QW+SEcIbACM6HVzJ9+5y8qFOKZyei+uXFCL58/NYXow=",
       "FSharp.Core.46bwnx2oyi.wasm": "sha256-dET+nEiuMMXfMkAgBQGgwUN5HsP2Gj5TGz8OiR4Udkg=",
       "Giraffe.ViewEngine.StrongName.xkzefg12bq.wasm": "sha256-oeqzKSIdrqEipapa0I9bjIvJDgu8DgdsyHIuHNNwas0=",
       "Microsoft.AspNetCore.Components.11gpzidey1.wasm": "sha256-ZfhzKyUD+Hx+5q4A0VCdu2zOMsVpHELGQ3z5DagPDn8=",
